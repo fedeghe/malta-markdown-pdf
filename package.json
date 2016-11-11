@@ -1,0 +1,28 @@
+{
+  "name": "malta-markdown-pdf",
+  "version": "0.0.5",
+  "description": "Malta plugin to live compile markdown to pdf",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://fedeghe@github.com/fedeghe/malta-markdown-pdf.git"
+  },
+  "keywords": [
+    "malta",
+    "malta plugin",
+    "malta markdown pdf",
+    "malta markdown pdf plugin"
+  ],
+  "author": "Federico Ghedina <federico.ghedina@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/fedeghe/malta-markdown-pdf/issues"
+  },
+  "dependencies": {
+    "markdown-pdf": "^7.0.0",
+    "malta": ">=3.0.0"
+  },
+  "main": "./index.js"
+}
