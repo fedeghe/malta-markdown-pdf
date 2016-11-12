@@ -24,7 +24,7 @@ function malta_markdown_pdf(o, options) {
 				var d = self.date(),
 					data = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
 					
-				msg = 'plugin ' + path.basename(__filename) + ' wrote ' + o.name + ' (' + self.getSize(o.name) + ')';
+				msg = 'plugin ' + path.basename(path.dirname(__filename)).white() + ' wrote ' + o.name + ' (' + self.getSize(o.name) + ')';
 
 				// still need to update o.content !!!
 						
