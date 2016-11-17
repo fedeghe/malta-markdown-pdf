@@ -7,7 +7,13 @@ var markdownpdf = require("markdown-pdf"),
 function malta_markdown_pdf(o, options) {
 	var self = this,
 		start = new Date(),
-		msg;
+		msg,
+        pluginName = path.basename(path.dirname(__filename)),
+		doErr = function (e) {
+			console.log(('[ERROR on ' + o.name + ' using ' + pluginName + '] :').red());
+			console.dir(e);
+			self.stop();
+		};
 
 	options = options || {};
 
@@ -18,23 +24,16 @@ function malta_markdown_pdf(o, options) {
 	o.name = o.name.replace(/\.md$/, '.pdf');
 
 	return function (solve, reject){
-	
 		try {
 			markdownpdf(options).from.string(o.content).to(o.name, function() {
 				var d = self.date(),
 					data = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
-					
-				msg = 'plugin ' + path.basename(path.dirname(__filename)).white() + ' wrote ' + o.name + ' (' + self.getSize(o.name) + ')';
-
-				// still need to update o.content !!!
-						
+				msg = 'plugin ' + pluginName.white() + ' wrote ' + o.name + ' (' + self.getSize(o.name) + ')';						
 				solve(o);
 				self.notifyAndUnlock(start, msg);
 			});
-		} catch (err) {
-			console.log('[ERROR] markdown-pdf says:');
-			console.dir(err);
-			self.stop();
+		} catch(err) {
+			doErr(err);
 		}	
 	};
 }
