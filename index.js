@@ -8,12 +8,7 @@ function malta_markdown_pdf(o, options) {
 	var self = this,
 		start = new Date(),
 		msg,
-        pluginName = path.basename(path.dirname(__filename)),
-		doErr = function (e) {
-			console.log(('[ERROR on ' + o.name + ' using ' + pluginName + '] :').red());
-			console.dir(e);
-			self.stop();
-		};
+        pluginName = path.basename(path.dirname(__filename));
 
 	options = options || {};
 
@@ -32,8 +27,8 @@ function malta_markdown_pdf(o, options) {
 				solve(o);
 				self.notifyAndUnlock(start, msg);
 			});
-		} catch(err) {
-			doErr(err);
+		} catch (err) {
+			self.doErr(err, o, pluginName);
 		}	
 	};
 }
