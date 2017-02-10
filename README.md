@@ -6,25 +6,26 @@ Options :
     - paperBorder : default `2cm`, supported dimension units are: 'mm', 'cm', 'in', 'px'  
 
 Sample usage:  
-
-    malta app/source/index.md public/docs -plugins=malta-markdown-pdf
-
+```
+malta app/source/index.md public/docs -plugins=malta-markdown-pdf
+```
 or in the .json file :
-
-    "app/source/index.md" : "public/docs -plugins=malta-markdown-pdf"
-
+```
+"app/source/index.md" : "public/docs -plugins=malta-markdown-pdf"
+```
 or in a script : 
-
-    var Malta = require('malta');
-    Malta.get().check([
-        'app/source/index.md',
-        'public/docs',
-        '-plugins=malta-markdown-pdf',
-        '-options=showPath:false,watchInterval:500,verbose:0'
-        ]).start(function (o) {
-            var s = this;
-            console.log('name : ' + o.name)
-            console.log("content : \n" + o.content);
-            'plugin' in o && console.log("plugin : " + o.plugin);
-            console.log('=========');
-        });
+``` js
+var Malta = require('malta');
+Malta.get().check([
+    'app/source/index.md',
+    'public/docs',
+    '-plugins=malta-markdown-pdf',
+    '-options=showPath:false,watchInterval:500,verbose:0'
+    ]).start(function (o) {
+        var s = this;
+        console.log('name : ' + o.name)
+        console.log("content : \n" + o.content);
+        'plugin' in o && console.log("plugin : " + o.plugin);
+        console.log('=========');
+    });
+```
