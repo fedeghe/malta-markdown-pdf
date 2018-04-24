@@ -1,6 +1,6 @@
 {
   "name": "malta-markdown-pdf",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Malta plugin to live compile markdown to pdf",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "markdown-pdf": "^7.0.0",
-    "malta": ">=3.4.0"
+    "malta": ">=3.8.3"
   },
   "main": "./index.js"
 }
