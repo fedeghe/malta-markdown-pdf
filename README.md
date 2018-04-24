@@ -1,3 +1,10 @@
+---
+[![npm version](https://badge.fury.io/js/malta-markdown-pdf.svg)](http://badge.fury.io/js/malta-markdown-pdf)
+[![Dependencies](https://david-dm.org/fedeghe/malta-markdown-pdf.svg)](https://david-dm.org/fedeghe/malta-markdown-pdf)
+[![npm downloads](https://img.shields.io/npm/dt/malta-markdown-pdf.svg)](https://npmjs.org/package/malta-markdown-pdf)
+[![npm downloads](https://img.shields.io/npm/dm/malta-markdown-pdf.svg)](https://npmjs.org/package/malta-markdown-pdf)  
+---  
+
 This plugin can be used on: **.md**
 
 Options :  
