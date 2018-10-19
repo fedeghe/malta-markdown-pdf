@@ -1,8 +1,7 @@
 require('malta').checkDeps('markdown-pdf');
 
 var markdownpdf = require("markdown-pdf"),
-	path = require('path'),
-	fs = require('fs');
+	path = require('path');
 
 function malta_markdown_pdf(o, options) {
 	var self = this,
