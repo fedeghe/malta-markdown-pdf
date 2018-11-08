@@ -21,8 +21,8 @@
     "url": "https://github.com/fedeghe/malta-markdown-pdf/issues"
   },
   "dependencies": {
-    "markdown-pdf": "^7.0.0",
-    "malta": ">=3.8.3"
+    "malta": ">=3.8.3",
+    "markdown-pdf": "^9.0.0"
   },
   "main": "./index.js"
 }
