@@ -27,7 +27,8 @@ function malta_markdown_pdf(o, options) {
 				self.notifyAndUnlock(start, msg);
 			});
 		} catch (err) {
-			self.doErr(err, o, pluginName);
+            self.doErr(err, o, pluginName);
+            reject(`Plugin ${pluginName} conversion error:\n${err}`)
 		}	
 	};
 }
