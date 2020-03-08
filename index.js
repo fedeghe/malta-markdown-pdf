@@ -1,13 +1,12 @@
-require('malta').checkDeps('markdown-pdf');
-
-var markdownpdf = require("markdown-pdf"),
+const markdownpdf = require("markdown-pdf"),
 	path = require('path');
 
 function malta_markdown_pdf(o, options) {
-	var self = this,
+	const self = this,
 		start = new Date(),
-		msg,
         pluginName = path.basename(path.dirname(__filename));
+    
+    let msg;
 
 	options = options || {};
 
@@ -17,10 +16,10 @@ function malta_markdown_pdf(o, options) {
 		
 	o.name = o.name.replace(/\.md$/, '.pdf');
 
-	return function (solve, reject){
+	return (solve, reject) => {
 		try {
-			markdownpdf(options).from.string(o.content).to(o.name, function() {
-				var d = self.date(),
+			markdownpdf(options).from.string(o.content).to(o.name, () => {
+				const d = self.date(),
 					data = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
 				msg = 'plugin ' + pluginName.white() + ' wrote ' + o.name + ' (' + self.getSize(o.name) + ')';						
 				solve(o);
